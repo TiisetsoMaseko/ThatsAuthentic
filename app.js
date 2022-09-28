@@ -2,6 +2,9 @@
 let express = require("express");
 let app = express();
 let bodyParser = require("body-parser");
+let passport = require("passport");
+let passportLocal = require("passport-local");
+let passportLocalMongoose = require("passport-local-mongoose");
 let homepageRouter = require("./routes/index"); // import the starting page router
 let mongoose = require("mongoose"); // import the mongoose dependency
 mongoose.connect("mongodb://localhost:27017/demo_thatsAuthentic"); // connect to localhost database
