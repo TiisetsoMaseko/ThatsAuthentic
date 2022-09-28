@@ -5,11 +5,16 @@ let passport = require("passport");
 let passportLocal = require("passport-local");
 let passportLocalMongoose = require("passport-local-mongoose");
 let expressSession = require("express-session");
-let homepageRouter = require("./routes/index"); // import the starting page router
 let mongoose = require("mongoose"); // import the mongoose dependency
 mongoose.connect("mongodb://localhost:27017/demo_thatsAuthentic"); // connect to localhost database
 
+// models
 let User = require("./models/user.js"); // import the user model
+
+// exporting routes
+let homepageRouter = require("./routes/index"); // import the starting page router
+let signupRouter = require("./routes/signup");
+
 let app = express();
 
 app.use(expressSession({
@@ -23,7 +28,10 @@ app.use(passport.session());
 
 passport.serializeUser(User.serializeUser()); // reading session, taking user datae and ncoding user data
 passport.deserializeUser(User.deserializeUser()); // decoding user data
+
+// ROUTES
 app.use(homepageRouter);
+app.use(signupRouter);
 
 
 // initialize this port to test code in google chrome or postman 
