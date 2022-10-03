@@ -1,0 +1,17 @@
+<%- include("./partials/header.ejs") %>
+
+<!-- form to capture client details -->
+<form action="/signup" method="POST"> 
+    <div class="form-group">
+        <label for="inputEmail">Email Address</label>
+        <input type="email" name="signup[email]">
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" name="signup[password]">
+    </div>
+    <button type="submit">Done</button>
+</form>
+
+<%- include("./partials/footer.ejs") %> 
