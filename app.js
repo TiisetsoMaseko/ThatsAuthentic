@@ -22,6 +22,7 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: false
 }));
+app.use(bodyParser.urlencoded({extended: true})) // gets data from the form 
 app.set("view engine", "ejs");
 app.use(passport.initialize()); //use the passport in the app
 app.use(passport.session());
