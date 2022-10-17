@@ -15,6 +15,7 @@ let User = require("./models/user.js"); // import the user model
 let homepageRouter = require("./routes/index"); // import the starting page router
 let signupRouter = require("./routes/signup");
 let loginRouter = require("./routes/login");
+let logoutRouter = require("./routes/logout");
 
 let app = express();
 app.set("view engine", "ejs");
@@ -39,6 +40,7 @@ passport.deserializeUser(User.deserializeUser()); // decoding user data
 app.use(homepageRouter);
 app.use(signupRouter);
 app.use(loginRouter);
+app.use(logoutRouter);
 
 
 // Initialize this port to test code in google chrome or postman 
