@@ -9,13 +9,15 @@ let mongoose = require("mongoose"); // import the mongoose dependency
 mongoose.connect("mongodb://localhost:27017/demo_thatsAuthentic"); // connect to a local database (for now)
 
 // Importing models
-let User = require("./models/user.js"); // import the user model
+let User = require("./models/user"); // import the user model
+let Service = require("./models/service"); // import service model
 
 // Importing routes
 let homepageRouter = require("./routes/index"); // import the starting page router
 let signupRouter = require("./routes/signup");
 let loginRouter = require("./routes/login");
 let logoutRouter = require("./routes/logout");
+let serviceRouter = require("./routes/services")
 
 let app = express();
 app.set("view engine", "ejs");
@@ -33,7 +35,7 @@ app.use(passport.initialize()); //use the passport in the app
 app.use(passport.session());
  
 passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser()); // reading session, taking user datae and ncoding user data
+passport.serializeUser(User.serializeUser()); // reading session, taking user data and encoding it
 passport.deserializeUser(User.deserializeUser()); // decoding user data
 
 // ROUTES
@@ -41,6 +43,7 @@ app.use(homepageRouter);
 app.use(signupRouter);
 app.use(loginRouter);
 app.use(logoutRouter);
+app.use(serviceRouter);
 
 
 // Initialize this port to test code in google chrome or postman 
