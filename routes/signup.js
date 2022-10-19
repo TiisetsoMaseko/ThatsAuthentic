@@ -22,7 +22,7 @@ router.post("/signup", function(req,res){
             passport.authenticate("local")(req,res, function(){ // using "local" strategy
                 console.log("sign up success");
             });
-            res.render("services");
+            res.redirect("services");
         }
     });
 });
