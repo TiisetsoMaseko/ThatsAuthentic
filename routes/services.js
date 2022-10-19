@@ -9,7 +9,7 @@ router.get("/services", function(req, res){
             console.log(err);
         }
         else{
-            res.render("services",{services, services});
+            res.render("services",{services: services});
         }
     });
 });
