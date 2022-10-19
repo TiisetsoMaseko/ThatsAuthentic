@@ -15,7 +15,7 @@ router.post("/signup", function(req,res){
     user.register(new user({username: req.body.username}), req.body.password, function(err, User){
         if (err){
             console.log(err);
-            res.render("signup");
+            res.redirect("signup");
         }
         else{
             // log the user in the system
