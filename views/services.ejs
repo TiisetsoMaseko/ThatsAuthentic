@@ -6,7 +6,13 @@
         <div class="row">
             <% for (let i=0; i<services.length; i++){ %>
                 <div class="col-md-4 col-sm-6">
-                    <img src= <%=services[i].img %>  class="img-fluid img-thumbnail" >
+                    <div class="card">
+                        <img src= <%=services[i].img %>  class="img-fluid card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= services[i].serviceType %></h5>
+                            <a href="#" class="btn btn-secondary">Book Now</a>
+                        </div>
+                    </div>
                 </div>
             <% } %>
         </div>
