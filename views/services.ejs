@@ -2,4 +2,14 @@
 
 <h2 style="text-align: center;">Here are the available services to choose from</h2>
 
+<div class="container">
+        <div class="row">
+            <% for (let i=0; i<services.length; i++){ %>
+                <div class="col-md-4 col-sm-6">
+                    <img src= <%=services[i].img %>  class="img-fluid img-thumbnail" >
+                </div>
+            <% } %>
+        </div>
+</div>
+         
 <%- include("./partials/footer") %> 
