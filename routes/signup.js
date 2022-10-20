@@ -21,8 +21,8 @@ router.post("/signup", function(req,res){
             // log the user in the system
             passport.authenticate("local")(req,res, function(){ // using "local" strategy
                 console.log("sign up success");
-            });
-            res.redirect("services");
+                res.redirect("services");
+            });   
         }
     });
 });
