@@ -19,7 +19,7 @@ let loginRouter = require("./routes/login");
 let logoutRouter = require("./routes/logout");
 let serviceRouter = require("./routes/services")
 
-let app = express();
+let app = express(); //initialize the app
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true})); // gets data from the form
 app.use(express.static(__dirname + "\\public")); // include the css files in the app
@@ -38,6 +38,12 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser()); // reading session, taking user data and encoding it
 passport.deserializeUser(User.deserializeUser()); // decoding user data
+
+// make user to be accessible to all ejs templates
+app.use( (req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // ROUTES
 app.use(homepageRouter);
