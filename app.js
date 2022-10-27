@@ -10,7 +10,7 @@ mongoose.connect("mongodb://localhost:27017/demo_thatsAuthentic"); // connect to
 
 // Importing models
 let User = require("./models/user"); // import the user model
-let Service = require("./models/service"); // import service model
+// let Service = require("./models/service"); // import service model
 
 // Importing routes
 let homepageRouter = require("./routes/index"); // import the starting page router
