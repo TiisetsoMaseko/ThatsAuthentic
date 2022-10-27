@@ -15,8 +15,5 @@ router.get("/services", middleware.isLoggedIn, function(req, res){
     });
 });
 
-router.get("/services/:id", middleware.isLoggedIn, function(req, res){
-    res.send("here you will see how to book for a slot")
-});
 
 module.exports = router;

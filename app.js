@@ -17,7 +17,8 @@ let homepageRouter = require("./routes/index"); // import the starting page rout
 let signupRouter = require("./routes/signup");
 let loginRouter = require("./routes/login");
 let logoutRouter = require("./routes/logout");
-let serviceRouter = require("./routes/services")
+let serviceRouter = require("./routes/services");
+let appointmentRouter = require("./routes/appointments");
 
 let app = express(); //initialize the app
 app.set("view engine", "ejs");
@@ -51,6 +52,7 @@ app.use(signupRouter);
 app.use(loginRouter);
 app.use(logoutRouter);
 app.use(serviceRouter);
+app.use(appointmentRouter);
 
 
 // Initialize this port to test code in google chrome or postman 
