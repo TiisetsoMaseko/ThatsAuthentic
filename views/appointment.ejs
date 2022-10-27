@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") %> 
+<h1>Calendar goes here</h1>
+
+<form >
+    <div class="form-group">
+        <label for="startTime">Choose start time for the appointment:</label>
+        <input type="datetime-local" name="starttime" id="startTime" value="">
+    </div>
+    <label for="endtime">End time is:</label>
+    <input type="datetime-local" name="endtime" placeholder="End time" id="endTime" value="">
+</form>
+
+
+<%- include("./partials/footer.ejs") %>
