@@ -25,9 +25,9 @@ let appointmentRouter = require("./routes/appointments");
 let app = express(); //initialize the app
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true})); // gets data from the form
-app.use(express.static(__dirname + "./public")); // include the css files in the app
-app.use("/public/images", express.static("images")); // access local images in the app
-app.use("/public/images/icons", express.static("icons")); // access local images in the app
+app.use(express.static(__dirname + "\\public")); // include the css files in the app
+app.use("/images", express.static("images")); // access local images in the app
+app.use("/icons", express.static("icons")); // access icons in the app
 
 
 
