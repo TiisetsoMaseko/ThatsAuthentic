@@ -25,6 +25,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true})); // gets data from the form
 app.use(express.static(__dirname + "\\public")); // include the css files in the app
 app.use("/images", express.static("images")); // access local images in the app
+app.use("/icons", express.static("icons")); // access icons in the app
+
 
 
 // Configuring Passport
